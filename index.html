@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Bible Verse</title>
+</head>
+<body>
+    
+        
+    <header>
+        <nav><h3>Bible study For Growth</h3></nav> 
+    </header>
+    <main>
+            <section class="leftSide-panel">
+                                <h3>Bible</h3>
+                <section id="book">
+                    <form>
+                        <select name="testament" id="testament">
+                            <option value="oldtestament">Old Testament</option>
+                            <option value="newtestament">New Testament</option>
+                        </select>
+    
+                        <label for="book">Book</label>
+                        <select name="book" id="books">
+                            <option value="Genesis">Genesis</option>
+                            <option value="Genesis">Exodus</option>
+                            <option value="Genesis">Leviticus</option>
+                            <option value="Genesis">Numbers</option>
+                            <option value="Genesis">Deuteronomy</option>
+                        </select>
+                        <!-- <input type="text" placeholder="Book"> -->
+                         <label for="chapter">Chapter</label><input type="number" >
+                        <label for="verse">Verse</label><input type="number">
+                        <input type="submit" value="Search">
+                    </form>
+                    <iframe src="/vese.html" frameborder="0" style="width: 100%;" height="300px"></iframe>
+
+                </section>
+               
+            </section>    
+
+            <section class="rightSide-panel"> 
+                 <section id="verse">
+                    <h2>Verse of the Day</h2>
+                <h2>John 3:16</h2>
+                <p>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life</p>
+                </section>
+                
+                <section id="searchOutput">
+                    <h2>Search Verses of choice</h2>
+                <form>
+                <input type="text" placeholder=" &#128269; Search">
+                </form>git
+                    Items Found
+                </section>
+            </section>
+        
+    </main>
+    <footer>
+    <i class= "fa" font-size="24px" style="color:black"> Settings</i>
+    </footer>
+</body>
+</html>
