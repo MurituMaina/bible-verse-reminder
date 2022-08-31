@@ -1,0 +1,51 @@
+body{
+margin:0;
+padding: 20;
+}
+nav{
+
+    margin-top: 0;
+    text-align: center;
+    font-size: large;
+    background-color: #AE8D8D;
+}
+main{
+display: flex;
+justify-content: space-between;
+
+
+}
+#verse{
+    text-align: center;
+}
+
+#book{
+    background-color: grey;
+    justify-content: flex-end;
+    
+
+}
+.leftSide-panel{
+    /* flex:1; */
+    background-color: white;
+   
+}
+.rightSide-panel{
+    display: block;
+    flex:3;
+    justify-content: space-around;
+    background-color: grey;
+    color:white;
+    text-align:center   ;
+}
+#searchOutput{
+background-color:white;
+color:black 
+}
+
+form{
+    align-items: left; 
+}
+#verse h2{
+    color: red;
+}
