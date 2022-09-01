@@ -58,9 +58,6 @@ scripture.innerHTML = `<h2>${data.reference}</h2><p id="verses"> ${data.text}</p
 for(var i = 0; i < book.length; i++){
     select.options.add(new Option(book[i], book[i]));
 } 
-
-
-
 // Daily Random Verse
 window.addEventListener('DOMContentLoaded', dailyVerse);
 
@@ -101,4 +98,62 @@ function dailyVerse (){
 
 // End
 
+//menu
+// let show = document.getElementById('icon1');
+// show.addEventListener("click", menuShow)
+// function menuShow(){
+//     const menu = document.getElementById("menu");
+//     if(menu.style.display === none){
+//         menu.style.display = 'block';
+//     }
+//     else{
+//         menu.style.display ='none'
+//     }
+// }
+//Test
+let menu = document.getElementById("menu");
+function menuShow() {
+    if (menu.style.display === "none") {
+      menu.style.display = "block";
+    } else {
+      menu.style.display = "none";
+    }
+  }
+
+  function menuHide() {
+    var menu = document.getElementById("menu");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+}
+let iconshow = document.getElementById("closeMenu")
+iconshow.addEventListener("click", ()=>{
+    let icon = document.getElementById('openMenu');
+    if(icon.style.display === 'no'){
+        icon.style.display = 'block';
+    }
+    else{
+        icon.style.display = 'block';
+    }
+})
+let hide = document.getElementById("openMenu");
+hide.addEventListener("click", () => {
+    if(hide.style.display === 'block'){
+        hide.style.display = 'none'
+    }
+    else{
+        hide.style.display = "block"
+    }
+})
+//End of Test
 //Search
+
+//End of Search
+//Footer
+const yearDate = new Date();
+// let yearNow =  year.getFullYear();
+// let year = document.getElementById('year');
+yearDate.textContent = yearNow;
+
