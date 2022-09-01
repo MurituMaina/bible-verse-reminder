@@ -1,51 +1,148 @@
 body{
 margin:0;
-padding: 20;
+padding: 0;
 }
-nav{
 
-    margin-top: 0;
+/* font-family: 'Lobster', cursive;
+font-family: 'Lora', serif;
+font-family: 'Ubuntu', sans-serif; */
+
+nav{
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
     text-align: center;
-    font-size: large;
+    padding-top: 20px;
+    font-size: 20px;
+    font-style: oblique;
     background-color: #AE8D8D;
+    height: 10vh ;
+    font-weight: 700;
+    color: #ffeffe;
+}
+#titleHead{
+    background-color: red;
+    margin-top:0;
+    padding:0;
+    height:0px
+}
+#title{
+    font-family: 'Ubuntu',sans-serif,Impact;
+    text-align: center;
+    font-size: 32px;
+    color:red'
+}
+#menu{
+    box-sizing: border-box;
+    height: 25%;
+    background-color: #ffefef;
+    width:25%;
+    display: none;
+    float: left;
+    padding:0 10px 0 20px ;
+    /* margin-top:15px; */
+
+
+}
+#openMenu{
+    color:#808080;
+    background-color: white;
+    border:none;
+    font-size: 45px;
+    display: block;
+    margin-right:10px;
+}
+#closeMenu{
+    background-color: #ffefef;
+    color:#808080;
+    font-size: 24px;
+    border:none;
+}
+#icon1{
+    font-size: 45px;
 }
 main{
 display: flex;
+
+flex-direction: row;
 justify-content: space-between;
 
 
 }
+#header{
+    background-color:#00ff00;
+}
 #verse{
     text-align: center;
+    color: #0f0f09;
 }
 
 #book{
-    background-color: grey;
+    background-color: #ffefef;
     justify-content: flex-end;
     
-
 }
+.leftSide-panel h2{
+    text-align: center;
+    font-size: 32px;
+}
+
 .leftSide-panel{
-    /* flex:1; */
-    background-color: white;
+    margin:0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    flex:3;
+  
+
    
 }
 .rightSide-panel{
+    margin:10px 10px 0 10px;
     display: block;
-    flex:3;
+    flex-direction: column-reverse;
+    flex:1;
     justify-content: space-around;
-    background-color: grey;
-    color:white;
+    background-color: grey(194, 201, 201);
+    color:maroon;
     text-align:center   ;
 }
+#daily_verse{
+    background-image: "url('assets/images/bestill.jpg')";
+}
 #searchOutput{
-background-color:white;
+    border:2px solid black;
+    height:100px;
+    flex: 1;
+background-color:#ffefef;
 color:black 
 }
-
-form{
-    align-items: left; 
-}
-#verse h2{
+#searchOutput form{
+    text-align: center;
     color: red;
+}
+
+#verse h2{
+    color: black;
+}
+#versesToRead{
+    background-color: #AE8D8D;
+    color: #f8f8f8;
+    /* flex:4; */
+    padding: 10px;
+    /* justify-content: space-around; */
+}
+#verses{
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 20px;
+    font-family: 'Lobster', cursive, sans-serif;
+}
+footer{
+    margin-bottom: 0;
+    background-color: #cfaaaa;
+}
+#year{
+    color: #fffef0;
+    text-align:center;
 }
