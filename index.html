@@ -8,59 +8,75 @@
     <title>Bible Verse</title>
 </head>
 <body>
-    
-        
-    <header>
-        <nav><h3>Bible study For Growth</h3></nav> 
+    <header> 
+          <nav>Bible study For Growth</nav>
+          <!-- <span id="icon1">&#8801;</span>  -->
+          <!-- <div id="menu">
+            <h3>Settings</h3>
+            <p id="reminder">Schedule Reminder</p>
+            <p>Themes</p>
+            
+          </div> -->
+
+          <button id="openMenu" onclick="menuShow()">&#8801;</button>
+
+          <div id="menu">
+          <button id="closeMenu" onclick="menuHide()">&#10006;</button>
+
+            
+            <h3>Settings</h3>
+            <p id="reminder">Schedule Reminder</p>
+            <p>Themes</p>
+          </div>
+     <h3></h3></div>
     </header>
+
     <main>
             <section class="leftSide-panel">
-                                <h3>Bible</h3>
+                <h2>Bible</h2>
                 <section id="book">
-                    <form>
-                        <select name="testament" id="testament">
-                            <option value="oldtestament">Old Testament</option>
-                            <option value="newtestament">New Testament</option>
-                        </select>
-    
+                    <form id="searchRead">
                         <label for="book">Book</label>
                         <select name="book" id="books">
-                            <option value="Genesis">Genesis</option>
-                            <option value="Genesis">Exodus</option>
-                            <option value="Genesis">Leviticus</option>
-                            <option value="Genesis">Numbers</option>
-                            <option value="Genesis">Deuteronomy</option>
                         </select>
-                        <!-- <input type="text" placeholder="Book"> -->
-                         <label for="chapter">Chapter</label><input type="number" >
-                        <label for="verse">Verse</label><input type="number">
+                        <label for="chapter">Chapter</label>
+                        <select name="chapter" id="chapter">
+                        </select>
+                        <label for="verse">Verse</label>
+                        <!-- <input type="number"max=180> -->
+                        <select name="verse" id="verse">
+                        </select>
                         <input type="submit" value="Search">
                     </form>
-                    <iframe src="/vese.html" frameborder="0" style="width: 100%;" height="300px"></iframe>
-
+                    <!-- <iframe src="/verse.html" margin="0" frameborder="0" style="width: 100%;" height="300px"></iframe> -->
+        <span>Font-size <button id="fontAdd">&#9650;</button><button id="fontReduce">&#9660;</button></span>
                 </section>
-               
+            
+                <section id="versesToRead">
+                    
+                </section>
             </section>    
-
+           
             <section class="rightSide-panel"> 
-                 <section id="verse">
-                    <h2>Verse of the Day</h2>
-                <h2>John 3:16</h2>
-                <p>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life</p>
-                </section>
+                 <div id="daily_verse">
+                    <h3>Verse of the Day</h3>
+                 </div>
                 
                 <section id="searchOutput">
                     <h2>Search Verses of choice</h2>
                 <form>
-                <input type="text" placeholder=" &#128269; Search">
-                </form>git
+                <input type="text" placeholder=" Search" id="search_text">
+                <input type="submit" value="&#128269;" id="search">
+                </form>
                     Items Found
                 </section>
             </section>
-        
+          
     </main>
     <footer>
-    <i class= "fa" font-size="24px" style="color:black"> Settings</i>
+    <!-- <i class= "fa" font-size="24px" style="color:black"> Settings</i> -->
+    &copy; <span id="year"></span> Vincent Muritu Maina
     </footer>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>
