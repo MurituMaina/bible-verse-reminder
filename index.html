@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lora:ital@1&family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+
     <title>Bible Verse</title>
 </head>
 <body>
     <header> 
           <nav>Bible study For Growth</nav>
-          <!-- <span id="icon1">&#8801;</span>  -->
-          <!-- <div id="menu">
-            <h3>Settings</h3>
-            <p id="reminder">Schedule Reminder</p>
-            <p>Themes</p>
-            
-          </div> -->
-
-          <button id="openMenu" onclick="menuShow()">&#8801;</button>
-
-          <div id="menu">
-          <button id="closeMenu" onclick="menuHide()">&#10006;</button>
-
-            
-            <h3>Settings</h3>
-            <p id="reminder">Schedule Reminder</p>
-            <p>Themes</p>
-          </div>
-     <h3></h3></div>
+        <div id="titleHead">
+        <h2 id='title'>Bible</h2>
+        </div>
+        
+        <button id="openMenu" onclick="menuShow()">&#8801;</button>
+        <div id="menu">
+        <button id="closeMenu" onclick="menuHide()">&#10006;</button>
+          <h3>Settings</h3>
+          <p id="reminder">Schedule Reminder</p>
+          Themes <select>
+            <option value="grayscale">Black & white</option>
+            <option value="default">Default</option>
+            <option value="personalize">Personalize</option>
+          </select>
+        </div>
     </header>
 
     <main>
             <section class="leftSide-panel">
-                <h2>Bible</h2>
+                <!-- <h2>Bible</h2> -->
                 <section id="book">
                     <form id="searchRead">
                         <label for="book">Book</label>
@@ -49,7 +49,7 @@
                         <input type="submit" value="Search">
                     </form>
                     <!-- <iframe src="/verse.html" margin="0" frameborder="0" style="width: 100%;" height="300px"></iframe> -->
-        <span>Font-size <button id="fontAdd">&#9650;</button><button id="fontReduce">&#9660;</button></span>
+        <!-- <span>Font-size <button id="fontAdd">&#9650;</button><button id="fontReduce">&#9660;</button></span> -->
                 </section>
             
                 <section id="versesToRead">
@@ -58,25 +58,50 @@
             </section>    
            
             <section class="rightSide-panel"> 
-                 <div id="daily_verse">
-                    <h3>Verse of the Day</h3>
+            <img src="./assets/images/bestill.jpg" width="200px"height="200px" alt="verse quote">
+
+                <h3>Verse of the Day</h3> 
+                <div id="daily_verse">
+                   
                  </div>
-                
                 <section id="searchOutput">
-                    <h2>Search Verses of choice</h2>
+                    <!-- <h2>Search Verses of choice</h2>
                 <form>
                 <input type="text" placeholder=" Search" id="search_text">
                 <input type="submit" value="&#128269;" id="search">
                 </form>
-                    Items Found
+                    Items Found -->
+                    <p>Timer To Next reminder:</p> <p id="timer"></p>
                 </section>
             </section>
           
     </main>
     <footer>
     <!-- <i class= "fa" font-size="24px" style="color:black"> Settings</i> -->
-    &copy; <span id="year"></span> Vincent Muritu Maina
+    &copy; <span id="year">2022</span> Vincent Muritu Maina
     </footer>
     <script src="/assets/js/script.js"></script>
+    <script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 2, 2022 05:00:00").getTime();
+
+// Update the count down every 1 second
+var interval = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  let timer = document.getElementById("timer")
+  timer.innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(interval);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+    </script>
 </body>
 </html>
