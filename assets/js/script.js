@@ -1,6 +1,6 @@
 // For Verse HTML 
 window.addEventListener('DOMContentLoaded', versesRead);
-function versesRead( books = 'Genesis', chapter =1 ,verse=20){
+function versesRead( books = 'Genesis', chapter ,verse =1){
     
     fetch(`https://bible-api.com/Genesis${chapter}:1-${verse}`)
     .then((resp) => resp.json())
@@ -43,7 +43,7 @@ function searchRead(event){
 
 }
 
-function verseRead( books = 'Genesis', chapter =1 ,verse=20){
+function verseRead( books = 'Genesis', chapter =1 ,verse=1){
     
 fetch(`https://bible-api.com/${books}${chapter}:1-${verse}`)
 .then((resp) => resp.json())
@@ -59,29 +59,43 @@ for(var i = 0; i < book.length; i++){
     select.options.add(new Option(book[i], book[i]));
 } 
 
+
+
 // Daily Random Verse
-// let dailyVerse = Math.Random()
-// console.log(dailyVerse)
+window.addEventListener('DOMContentLoaded', dailyVerse);
 
+let daily_verse = document.getElementById("daily_verse");
 
-// var someStr = 'He said "Hello, my name is Foo"';
-// console.log(someStr.replace(/['"]+/g, ''));
+const booksChapters ={    Genesis: 50,  Exodus: 40,  Leviticus: 27, Numbers: 36, Deuteronomy: 34,  Joshua: 24,  Judges: 21,  Ruth: 4,  "1 Samuel": 31,  "2 Samuel": 24,  "1 Kings": 22,  "2 Kings": 25,  "1 Chronicles": 29,  "2 Chronicles": 36,  Ezra: 10,  Nehemiah: 13,  Esther: 10,  Job: 42,  Psalms: 150,  Proverbs: 31,  Ecclesiastes: 12,  "Song of Solomon": 8,  Isaiah: 66,  Jeremiah: 52,  Lamentations: 5,  Ezekiel: 48,  Daniel: 12,  Hosea: 14,  Joel: 3,  Amos: 9,  Obadiah: 1,  Jonah: 4,  Micah: 7,  Nahum: 3,  Habakkuk : 3,  Zephaniah: 3,  Haggai: 2,  Zechariah: 14,  Malachi: 4,   Matthew:28,  Mark:16,  Luke:24,  John:21,  Acts:28,  Romans:16,  "1 Corinthians":16,  "2 Corinthians":13,  Galatians:6,  Ephesians:6,  Philippians:4,  Colossians:4,  "1 Thessalonians":5,  "2 Thessalonians":3,  "1 Timothy":6,  "2 Timothy":4,  Titus:3,  Philemon:1,  Hebrews:13,  James:5,  "1 Peter":5,  "2 Peter":3,  "1 John":5,  "2 John":1,  "3 John":1,  Jude:1,  Revelation:22  } 
+    
+    
+function dailyVerse (){
+     
+        let books =  book[Math.floor(Math.random()*book.length)]
+        let chapter = Math.floor(Math.random()*booksChapters[books]+1) ; 
+    
+    console.log(books)
+    console.log(chapter)
+        let verse = Math.floor(Math.random()*10) //10 is number of 
+        console.log(verse)
+        console.log(books,chapter, verse)
+        daily_verse.textContent = ``
+      
+    
+        fetch(`https://bible-api.com/${books}${chapter}:1-${verse}`)
+        .then((resp) => resp.json())
+        .then((data) => {
+            console.log(data)
+            console.log(data.reference)
+            console.log(data.text)
 
-//For Verse HTML 
-// window.addEventListener('DOMContentLoaded', (event) => {
-//     console.log('DOM fully loaded and parsed');
-// });
-// window.addEventListener('DOMContentLoaded', randomFoodGen)
-// const display = document.getElementById("bibleScriptures")
-// function randomFoodGen(){
-//     fetch('https://bible-api.com/Genesis1:1-30')
-//     .then((resp) => resp.json())
-//     .then((data) => {
-//         console.log(data.text)
-//          display.innerHTML = `
-//          <h2>${data.reference}</h2><p id='verse'> ${data.text}/n</p>`
-//         //  display.background-color(red)
+        daily_verse.innerHTML = `<h2>${data.reference}</h2><p id="verses"> ${data.text}</p>`
+            })
+        .catch((error) => console.log(error + "Error!!"))
         
-//     })
-//     .catch(() => console.log("Errors"))
-// }
+    }
+
+
+// End
+
+//Search
