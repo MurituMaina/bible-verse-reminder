@@ -78,16 +78,19 @@ function dailyVerse (){
     console.log(chapter)
         let verse = Math.floor(Math.random()*10) //10 is number of 
         console.log(verse)
-        console.log(books,chapter, verse)
+        if(verse === 0){
+            verse +=1;
+        }
+        // console.log(books,chapter, verse)
         daily_verse.textContent = ``
       
     
-        fetch(`https://bible-api.com/${books}${chapter}:1-${verse}`)
+        fetch(`https://bible-api.com/${books}${chapter}:${verse}`)
         .then((resp) => resp.json())
         .then((data) => {
-            console.log(data)
-            console.log(data.reference)
-            console.log(data.text)
+            // console.log(data)
+            // console.log(data.reference)
+            // console.log(data.text)
 
         daily_verse.innerHTML = `<h2>${data.reference}</h2><p id="verses"> ${data.text}</p>`
             })
