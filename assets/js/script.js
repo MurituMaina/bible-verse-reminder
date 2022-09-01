@@ -6,7 +6,7 @@ function versesRead( books = 'Genesis', chapter ,verse =1){
     .then((resp) => resp.json())
     .then((data) => {
         let scripture = document.getElementById("versesToRead")
-    scripture.innerHTML = `<h2>${data.reference}</h2><p> ${data.text}</p>`
+    scripture.innerHTML = `<h4>${data.reference}</h4><p> ${data.text}</p>`
     })
     .catch((error) => console.log(error + "Error!!"))}
 
@@ -34,11 +34,11 @@ search.addEventListener('submit', searchRead);
 function searchRead(event){
     event.preventDefault()
     let books = document.getElementById('books').value;
-    console.log(books)
+    //console.log(books)
     let chapters = document.getElementById('chapter').value;
-    console.log(chapters)
+    //console.log(chapters)
     let verse = document.getElementById("verse").value;
-    console.log(books, chapters, verse);
+    //console.log(books, chapters, verse);
     verseRead(books, chapters, verse)
 
 }
@@ -49,7 +49,7 @@ fetch(`https://bible-api.com/${books}${chapter}:1-${verse}`)
 .then((resp) => resp.json())
 .then((data) => {
     let scripture = document.getElementById("versesToRead")
-scripture.innerHTML = `<h2>${data.reference}</h2><p id="verses"> ${data.text}</p>`
+scripture.innerHTML = `<h4>${data.reference}</h4><p id="verses"> ${data.text}</p>`
 })
 .catch((error) => console.log(error + "Error!!"))}
 
@@ -71,10 +71,10 @@ function dailyVerse (){
         let books =  book[Math.floor(Math.random()*book.length)]
         let chapter = Math.floor(Math.random()*booksChapters[books]+1) ; 
     
-    console.log(books)
-    console.log(chapter)
+    //console.log(books)
+    //console.log(chapter)
         let verse = Math.floor(Math.random()*10) //10 is number of 
-        console.log(verse)
+        //console.log(verse)
         if(verse === 0){
             verse +=1;
         }
@@ -85,11 +85,9 @@ function dailyVerse (){
         fetch(`https://bible-api.com/${books}${chapter}:${verse}`)
         .then((resp) => resp.json())
         .then((data) => {
-            // console.log(data)
-            // console.log(data.reference)
-            // console.log(data.text)
+            
 
-        daily_verse.innerHTML = `<h2>${data.reference}</h2><p id="verses"> ${data.text}</p>`
+        daily_verse.innerHTML = `<h4>${data.reference}</h4><p id="verses"> ${data.text}</p>`
             })
         .catch((error) => console.log(error + "Error!!"))
         
@@ -98,19 +96,8 @@ function dailyVerse (){
 
 // End
 
-//menu
-// let show = document.getElementById('icon1');
-// show.addEventListener("click", menuShow)
-// function menuShow(){
-//     const menu = document.getElementById("menu");
-//     if(menu.style.display === none){
-//         menu.style.display = 'block';
-//     }
-//     else{
-//         menu.style.display ='none'
-//     }
-// }
-//Test
+//menu formatting
+
 let menu = document.getElementById("menu");
 function menuShow() {
     if (menu.style.display === "none") {
@@ -147,7 +134,7 @@ hide.addEventListener("click", () => {
         hide.style.display = "block"
     }
 })
-//End of Test
+//End of Menu formatting
 //Search
 
 //End of Search
@@ -157,3 +144,41 @@ const yearDate = new Date();
 // let year = document.getElementById('year');
 yearDate.textContent = yearNow;
 
+let versesbg = document.getElementById("verses")
+versesbg.backgroundimage = "url('https://unsplash.com/photos/yC-Yzbqy7PY')"
+
+
+///TIMER
+
+
+
+let countDownDate = new Date("Sep 3, 2022 05:00:00").getTime();
+
+// Update the count down every 1 second
+window.addEventListener('DOMContentLoaded', x)
+let x = setInterval(function() {
+
+  // Get today's date and time
+  let now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  let distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="timer"
+ let timer =  document.getElementById("timer")
+ timer.innerText = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    console.log(days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ");
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
