@@ -80,8 +80,30 @@
     <!-- <i class= "fa" font-size="24px" style="color:black"> Settings</i> -->
     &copy; <span id="year">2022</span> Vincent Muritu Maina
     </footer>
-    <script src="/assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
     <script>
+
+let countDownDate = new Date("Sep 7, 2022 05:00:00").getTime();
+
+// Update the count down every 1 second
+window.addEventListener('DOMContentLoaded', x)
+let wait = setInterval(function() {
+  let now = new Date().getTime();
+  let distance = countDownDate - now;
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+ let timer =  document.getElementById("timer")
+ timer.innerText = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    console.log(days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ");
+  if (distance < 0) {
+    clearInterval(wait);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
 
 
     </script>
