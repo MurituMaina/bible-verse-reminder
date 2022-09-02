@@ -152,7 +152,7 @@ versesbg.backgroundimage = "url('https://unsplash.com/photos/yC-Yzbqy7PY')"
     
 
 
-let countDownDate = new Date("Sep 3, 2022 05:00:00").getTime();
+let countDownDate = new Date("Sep 7, 2022 05:00:00").getTime();
 
 // Update the count down every 1 second
 window.addEventListener('DOMContentLoaded', x)

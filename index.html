@@ -82,25 +82,7 @@
     </footer>
     <script src="/assets/js/script.js"></script>
     <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Sep 3, 2022 05:00:00").getTime();
 
-// Update the count down every 1 second
-var interval = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  let timer = document.getElementById("timer")
-  timer.innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-  if (distance < 0) {
-    clearInterval(interval);
-    document.getElementById("timer").innerHTML = "EXPIRED";
-  }
-}, 1000);
 
     </script>
 </body>
