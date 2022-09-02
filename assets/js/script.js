@@ -149,7 +149,7 @@ versesbg.backgroundimage = "url('https://unsplash.com/photos/yC-Yzbqy7PY')"
 
 
 ///TIMER
-
+    
 
 
 let countDownDate = new Date("Sep 3, 2022 05:00:00").getTime();
