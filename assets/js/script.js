@@ -139,36 +139,35 @@ hide.addEventListener("click", () => {
 
 //End of Search
 //Footer
-const yearDate = new Date();
-// let yearNow =  year.getFullYear();
-// let year = document.getElementById('year');
-yearDate.textContent = yearNow;
 
-let versesbg = document.getElementById("verses")
-versesbg.backgroundimage = "url('https://unsplash.com/photos/yC-Yzbqy7PY')"
+//TIMER
+let m;
+let d;
+let y;
+let h;
+const yearDate = new Date("Sep 8, 2022 05:00:00").getTime();
+let x = setInterval( function ()
+{
+    let now = new Date().getTime();
+    let distance = yearDate - now;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    let timer =  document.getElementById("timer") 
+    timer.innerText = days + "d " + hours + "h " + minutes + "m " + seconds + "s "; 
+    //    console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+       if (distance < 0) {
+        clearInterval(wait);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+      }
+}, 1000)
 
-
-///TIMER
-let countDownDate = new Date("Sep 7, 2022 05:00:00").getTime();
-window.addEventListener('DOMContentLoaded', () => console.log("I am here"))
-let wait = setInterval(function() {
-  let now = new Date().getTime();
-  let distance = countDownDate - now;
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
- let timer =  document.getElementById("timer")
- timer.innerText = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    console.log(days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ");
-  if (distance < 0) {
-    clearInterval(wait);
-    document.getElementById("timer").innerHTML = "EXPIRED";
-  }
-}, 1000);
+// let versesbg = document.getElementById("verses")
+// versesbg.backgroundimage = "url('https://unsplash.com/photos/yC-Yzbqy7PY')"
 
 
 
-// hbbhh
+
+
+// // hbbhh
