@@ -185,7 +185,7 @@ let reminder = document.getElementById('setter');
 
 
 function setReminder(event,
-  date='09-08-2022', time= '05:00'){
+  date='01-25-2023', time= '05:00'){
   event.preventDefault();
 
   //  console.log(date, time)
