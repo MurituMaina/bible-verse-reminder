@@ -7,14 +7,14 @@ The Bible Reminder also auto generates verses randomly for the user. For every v
 
 ## Getting Started
 <hr>
-The application 
+The application
 
 ### Dependecies
 The software uses the https://bible-api.com/ api that allows the generation of the verses and the availing of the search for the different chapters.
 ### Installations
-There are no prerequisite installations. Though Interner access is required to access the 
+There are no prerequisite installations. Though Interner access is required to access the
 
-### Execution of the Program 
+### Execution of the Program
 The application auto generates the first chapter and verses and the user can change and select the specific verses they desire to read.
 
 They can select a range from 1 and above.
@@ -30,6 +30,7 @@ Vincent Muritu Maina <br>
 Email vincentmuritumaina@gmail.com<br>
 Github  https://github.com/MurituMaina
 # License
-This project is license under the 
+This project is license under the MIT LICENSE>
 
 ## Acknowledgement
+The public apis and specifically appreciate <bible-api.com> without which this project foundation woukd be.

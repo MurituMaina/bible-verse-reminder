@@ -5,81 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lora:ital@1&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Bible Verse</title>
 </head>
 <body>
-    <header> 
-          <nav>Bible study For Growth</nav>
+    <header>
+          <div id="nav">
+
+            <span>Bible study For Growth</span>
+          </div>
         <div id="titleHead">
         <h2 id='title'>Bible</h2>
+        <p id="leadverse"></p>
         </div>
-        
         <button id="openMenu" onclick="menuShow()">&#8801;</button>
         <div id="menu">
         <button id="closeMenu" onclick="menuHide()">&#10006;</button>
           <h3>Settings</h3>
-          <p id="reminder">Schedule Reminder</p>
+          <button type="button" class="collapsible" id="reminder">Schedule Reminder</button>
+          <div id="setReminderTime" class="content">
+            <form method="post" id="setter">
+                <h2>Pick the Date and Time</h2><br>
+                <Label for="date">Date</Label><br><br>
+                <input type="date" name="date" id="date"><br><br>
+                <Label for="date">Time</Label><br><br>
+                <input type="time" name="time" id="time" value="05:00"><br><br>
+                <input type="submit" value="Submit"><br><br><br>
+            </form><br>
+          </div>
           Themes <select>
-            <option value="grayscale">Black & white</option>
             <option value="default">Default</option>
+            <option value="grayscale" id="blackwhite">Black & white</option>
             <option value="personalize">Personalize</option>
           </select>
         </div>
     </header>
 
     <main>
-            <section class="leftSide-panel">
-                <!-- <h2>Bible</h2> -->
-                <section id="book">
-                    <form id="searchRead">
-                        <label for="book">Book</label>
-                        <select name="book" id="books">
-                        </select>
-                        <label for="chapter">Chapter</label>
-                        <select name="chapter" id="chapter">
-                        </select>
-                        <label for="verse">Verse</label>
-                        <!-- <input type="number"max=180> -->
-                        <select name="verse" id="verse">
-                        </select>
-                        <input type="submit" value="Search">
-                    </form>
-                    <!-- <iframe src="/verse.html" margin="0" frameborder="0" style="width: 100%;" height="300px"></iframe> -->
-        <!-- <span>Font-size <button id="fontAdd">&#9650;</button><button id="fontReduce">&#9660;</button></span> -->
-                </section>
-            
-                <section id="versesToRead">
-                    
-                </section>
-            </section>    
-           
-            <section class="rightSide-panel"> 
-            <img src="./assets/images/bestill.jpg" width="200px"height="200px" alt="verse quote">
 
-                <h3>Verse of the Day</h3> 
-                <div id="daily_verse">
-                   
-                 </div>
-                <section id="searchOutput">
-                    <!-- <h2>Search Verses of choice</h2>
-                <form>
-                <input type="text" placeholder=" Search" id="search_text">
-                <input type="submit" value="&#128269;" id="search">
-                </form>
-                    Items Found -->
-                    <p>Timer To Next reminder:</p> <p id="timer">dhm</p>
-                </section>
-            </section>
-          
+      <section id="main">
+        <section class="main-panel">
+
+        <iframe src="/verse.html" frameborder="0"></iframe>
+
+
+      </section>
+        <section class="display-panel">
+            <div  class="display-panel pane_verse" >
+            <img src="./assets/images/fearNot.jpg" alt="verse quote">
+            <h2>Verse of the Day</h2>
+            <span id="daily_verse"></span>
+        </section>
+       </section>
+        <section id="abt_text">
+            <div id="timed">
+            <p>Timer To Next reminder:</p><p id="timer">dhm</p>
+            </div>
+            <div id="did_you">
+            <h2>Did You Know? &#129300;&#129300;&#129300;</h2>
+            <p>
+            Psalms 118: The Middle Most Chapter of the Bible....
+            </p>
+            <span id='did_youKnow'></span>
+            </div>
+        </section>
+      </section>
+
     </main>
-    <footer>
-    <!-- <i class= "fa" font-size="24px" style="color:black"> Settings</i> -->
-    &copy;<span id="year">2022</span> Vincent Muritu Maina
-    </footer>
-    <script src="./assets/js/script.js"></script>
+        <footer>
+        &copy;<span id="year">&nbsp;2022</span> Vincent Muritu Maina
+        <a href="mailto:vincentmuritumaina@gmail.com" target="_blank">vincentmuritumaina@gmail.com</a>
+        </footer>
+        <script src="./assets/js/script.js"></script>
   </body>
 </html>
