@@ -3,16 +3,9 @@ window.addEventListener('DOMContentLoaded', () => {
 versesRead();
 dailyVerse();
 didYou();
-setReminder();
+// ();
 })
-
-
-// window.addEventListener('DOMContentLoaded',() =>{
-//   versesRead();
-//   dailyVerse();
-//   didYou();
-//   setReminder(date, time);
-// } );
+document.addEventListener('DOMContentLoaded',setReminder)
 
 function versesRead( books = 'Genesis', chapter ,verse =1){
     // https://bible-api.com/john%203:16?verse_numbers=true
@@ -39,6 +32,7 @@ let verseSelect = document.getElementById('verse');
 for(var i = 0; i < book.length; i++){
     select.options.add(new Option(book[i], book[i]));
 }
+
 for(let i= 0; i < 150; i++){
 chapterSelect.options.add(new Option([i+1], i+1),)
 }
