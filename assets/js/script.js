@@ -7,6 +7,13 @@ setReminder();
 })
 
 
+// window.addEventListener('DOMContentLoaded',() =>{
+//   versesRead();
+//   dailyVerse();
+//   didYou();
+//   setReminder(date, time);
+// } );
+
 function versesRead( books = 'Genesis', chapter ,verse =1){
     // https://bible-api.com/john%203:16?verse_numbers=true
     fetch(`https://bible-api.com/Genesis${chapter}:1-${verse}?verse_numbers=true`)
@@ -77,7 +84,7 @@ function dailyVerse (){
       fetch(`https://bible-api.com/${books}${chapters}:${verse}`)
       .then((resp) => resp.json())
       .then((data) => {
-          console.log(data.reference, data.text)
+          // console.log(data.reference, data.text)
         let daily_verse = document.getElementById("daily_verse");
         daily_verse.innerHTML = `<h3>${data.reference}</h3><h4>${data.translation_name}</h4><p> ${data.text}</p><a href=#readmore>Read More...</a>`})
         .catch((error) => console.log(error + " daily Error!!"))
@@ -89,7 +96,7 @@ function dailyVerse (){
 // menu.addEventListener("click", menuShow)
 function menuShow() {
 let menu = document.getElementById("menu");
-  console.log("Hello World!")
+  // console.log("Hello World!")
     if (menu.style.display === "none") {
       menu.style.display = "block";
     } else {
@@ -135,7 +142,7 @@ function didYou(){
    fetch(`https://bible-api.com/Psalms$118:29`)
    .then((resp) => resp.json())
    .then((data) => {
-    console.log(data.reference, data.text)
+    // console.log(data.reference, data.text)
 let did_youKnow = document.getElementById('did_youKnow')
 
   did_youKnow.innerHTML = `<h4 id="quote_head">${data.reference}</h4>
@@ -154,7 +161,7 @@ let coll = document.getElementsByClassName("collapsible");
     coll.classList.toggle("active");
     let content = document.getElementById("setReminderTime")
     if (content.style.display === "none") {
-      console.log("hello Kenya")
+      // console.log("hello Kenya")
       content.style.display = "block";
     } else {
       content.style.display = "block";
@@ -171,37 +178,29 @@ let coll = document.getElementsByClassName("collapsible");
 // console.log(date, time)
 
 let reminder = document.getElementById('setter');
- reminder.addEventListener("change",
-  (event)=> {
-    event.preventDefault();
-   console.log("Pleasure" + event)
+ reminder.addEventListener("click", starter)
 
-    let dateInput=document.getElementById('date');
-    let date = dateInput.target.value;
-    let timeInput = document.getElementById('time');
-    let time = timeInput.target.value;
-    console.log(date, time)
+ const starter =  (event)=> {
+  event.preventDefault();
+  let dateInput=document.getElementById('date').value;  
+  alert(dateInput);
+  console.log("date:" + dateInput)
+  let timeInput = document.getElementById('time');
+  let time = timeInput.target.value;
+  console.log("Got this"+dateInput, time)
 
-    setReminder(date, time)
-  }
-)
+  setReminder(event, date, time)
+}
 
 
 function setReminder(event,
   date='01-25-2023', time= '05:00'){
   event.preventDefault();
-
-  //  console.log(date, time)
   const [m, d, y] = date.split('-');
-  // console.log(y,m,d, time);
-  let k = [m,d,y,time];
-k =k.join(" ");
-console.log(`The answer: `+ k);
-
+  let setTime = [m,d,y,time];
+  setTime =setTime.join(" ");
 //TIMER
-
-// const yearDate = new Date('Sep 23 2022 05:00').getTime();
-const yearDate = new Date(`${k}`).getTime();
+const yearDate = new Date(`${setTime}`).getTime();
 let x = setInterval( function ()
 {
     let now = new Date().getTime();
@@ -212,7 +211,6 @@ let x = setInterval( function ()
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     let timer =  document.getElementById("timer")
     timer.innerText = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-       console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
        if (distance < 0) {
         clearInterval(wait);
         document.getElementById("timer").innerHTML = "EXPIRED";

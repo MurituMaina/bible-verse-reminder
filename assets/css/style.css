@@ -5,9 +5,7 @@ body{
 font-size: 20px;
 margin:0;
 padding: 0;
-/* background-image:('https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=pexels-eberhard-grossgasteiger-443446.jpg&fm=jpg'); */
-background-image: url('https://media.istockphoto.com/photos/forest-wooden-table-background-summer-sunny-meadow-with-green-grass-picture-id1353553203?b=1&k=20&m=1353553203&s=170667a&w=0&h=QTyTGI9tWQluIlkmwW0s7Q4z7R_IT8egpzzHjW3cSas=');
-/* background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg'); */
+background-image: url('../images/background.jpg');
 background-repeat:no-repeat;
 background-size: cover;
 }
