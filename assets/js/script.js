@@ -212,7 +212,7 @@ let x = setInterval( function ()
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     let timer =  document.getElementById("timer")
     timer.innerText = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      //  console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+       console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
        if (distance < 0) {
         clearInterval(wait);
         document.getElementById("timer").innerHTML = "EXPIRED";
@@ -222,14 +222,3 @@ let x = setInterval( function ()
 
 
 }
-
-
-
-// let black_white = document.getElementsById("blackWhite")
-// black_white.addEventListener("change",blackWhite)
-// function blackWhite (){t
-//     // if(9)
-//     this.classList.toggle('blackWhite');
-//     // let main = document.getElementsByTagName('main');
-//     // main.
-// }
